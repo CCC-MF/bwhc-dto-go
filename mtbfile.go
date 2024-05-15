@@ -235,16 +235,17 @@ type MolecularTherapy struct {
 }
 
 type History struct {
-	BasedOn       string                `json:"basedOn"`
-	ID            string                `json:"id"`
-	NotDoneReason *NotDoneReason        `json:"notDoneReason,omitempty"`
-	Note          *string               `json:"note,omitempty"`
-	Patient       string                `json:"patient"`
-	RecordedOn    string                `json:"recordedOn"`
-	Dosage        *Dosage               `json:"dosage,omitempty"`
-	Medication    []HistoryMedication   `json:"medication,omitempty"`
-	Period        *HistoryPeriod        `json:"period,omitempty"`
-	ReasonStopped *HistoryReasonStopped `json:"reasonStopped,omitempty"`
+	BasedOn       string                 `json:"basedOn"`
+	ID            string                 `json:"id"`
+	NotDoneReason *NotDoneReason         `json:"notDoneReason,omitempty"`
+	Note          *string                `json:"note,omitempty"`
+	Patient       string                 `json:"patient"`
+	RecordedOn    string                 `json:"recordedOn"`
+	Status        MolecularTherapyStatus `json:"status"`
+	Dosage        *Dosage                `json:"dosage,omitempty"`
+	Medication    []HistoryMedication    `json:"medication,omitempty"`
+	Period        *HistoryPeriod         `json:"period,omitempty"`
+	ReasonStopped *HistoryReasonStopped  `json:"reasonStopped,omitempty"`
 }
 
 type HistoryMedication struct {
@@ -722,6 +723,15 @@ const (
 	MolekularTherapyStopReasonUnknown             MolekularTherapyStopReason = "unknown"
 	PaymentEnded                                  MolekularTherapyStopReason = "payment-ended"
 	Remission                                     MolekularTherapyStopReason = "remission"
+)
+
+type MolecularTherapyStatus string
+
+const (
+	Completed MolecularTherapyStatus = "completed"
+	NotDone   MolecularTherapyStatus = "not-done"
+	OnGoing   MolecularTherapyStatus = "on-going"
+	Stopped   MolecularTherapyStatus = "stopped"
 )
 
 type CnvType string
