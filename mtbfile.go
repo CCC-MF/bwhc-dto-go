@@ -636,10 +636,14 @@ const (
 type WHOGrade string
 
 const (
-	I   WHOGrade = "I"
-	Ii  WHOGrade = "II"
-	Iii WHOGrade = "III"
-	Iv  WHOGrade = "IV"
+	I     WHOGrade = "I"
+	Ii    WHOGrade = "II"
+	Iii   WHOGrade = "III"
+	Iv    WHOGrade = "IV"
+	Code1 WHOGrade = "1"
+	Code2 WHOGrade = "2"
+	Code3 WHOGrade = "3"
+	Code4 WHOGrade = "4"
 )
 
 type Ecog string
